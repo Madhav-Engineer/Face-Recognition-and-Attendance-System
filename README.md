@@ -38,7 +38,7 @@ The system utilizes the following techniques:
 ## Steps to Follow
 
 1. *Add Student Images:*
-   - Ensure each student's image (in .jpg format) is added to the database, with the filename corresponding to the student's name.
+   - Ensure each student's image (in .jpg format) is added to the database, with the filename corresponding to the student's name. This database should be created by the user.
 
 2. *Running the Code:*
    - Open the main code in your preferred IDE and execute it.
@@ -51,3 +51,7 @@ The system utilizes the following techniques:
 
 
 This project demonstrates the application of face recognition technology in streamlining the attendance process, balancing accuracy with user privacy.
+
+There might be a chance that you might undergo an error related to the dlib and cmake during the installation of the face recognition library , this dlib should be carefully downloaded and installed according to the version of the python you use and the bit your computer is based on .
+
+Thankyou have a nice day!
