@@ -1,0 +1,39 @@
+
+CODE EXPLANATION LINE BY LINE : 
+
+
+
+(1) Import the necessary libraries: OpenCV for image processing, NumPy for numerical operations, the face_recognition library for face detection and recognition, the os module for interacting with the operating system, and the datetime module for handling dates and times.
+
+(2) Define the path to the directory where the images for attendance are stored.
+
+(3) Initialize two empty lists: one for storing the images and another for storing the corresponding class names.
+
+(4) List all files in the specified directory and print the list of files.
+
+(5) Loop through the list of files. For each file, read the image using OpenCV and append it to the images list. Extract the filename without the extension and append it to the classNames list. Print the list of class names.
+
+(6) Define a function to find face encodings for a list of images. Inside the function, initialize an empty list for the encodings. Loop through each image, convert it from BGR (OpenCV default) to RGB, find the face encoding for the image, and append the encoding to the list. Return the list of encodings.
+
+(7) Define a function to mark attendance with a timestamp. Inside the function, open the CSV file in read and write mode. Read all lines in the file and initialize an empty list to hold names. Loop through each line, split it by comma, and append the first element (name) to the name list. If the name is not already in the list, get the current time and format it as HH:MM
+and DD/MM/YYYY. Write the name, time, and date to the file.
+
+(8) Get the encodings for the known images by calling the findEncodings function and print a message indicating that encoding is complete.
+
+(9) Start capturing video from the webcam using OpenCV.
+
+(10) Enter a loop to process each frame from the webcam. Capture a frame and resize it to 1/4th of its original size to speed up processing. Convert the frame from BGR to RGB.
+
+(11) Get the locations of all faces in the current frame and find the encodings of the faces.
+
+(12) Loop through each face and its location. Compare the face encoding with the known encodings to check for matches. Get the face distance to measure similarity and print the face distances. Get the index of the smallest distance (best match).
+
+(13) If a match is found, get the name of the matched face and print it. Get the coordinates of the face location and scale the coordinates back to the original frame size.
+
+(14) Draw a rectangle around the recognized face, draw a filled rectangle below the face to display the name, and put the name text inside the filled rectangle. Mark the attendance of the recognized face by calling the markAttendance function.
+
+(15) Display the frame with the drawn rectangles and names in a window named 'webcam'.
+
+(16) Break the loop if the 'Enter' key is pressed.
+
+(17) Release the webcam and close all OpenCV windows.
